@@ -1,19 +1,40 @@
+// components/NavBar.js
 import Link from 'next/link';
 
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <nav style={{ padding: '10px', backgroundColor: '#f0f0f0', marginBottom: '20px' }}>
-      <Link href="/">
-        <a style={{ marginRight: '20px' }}>Accueil</a>
-      </Link>
-      <Link href="/people">
-        <a style={{ marginRight: '20px' }}>Liste des personnes</a>
-      </Link>
-      <Link href="/animals">
-        <a>Liste des animaux</a>
-      </Link>
+    <nav>
+      <ul>
+        <li>
+          <Link href="/">Accueil</Link>
+        </li>
+        <li>
+          <Link href="/people">Liste des personnes</Link>
+        </li>
+        <li>
+          <Link href="/animals">Liste des animaux</Link>
+        </li>
+      </ul>
+      <style jsx>{`
+        nav {
+          background-color: #333;
+          padding: 1rem;
+        }
+        ul {
+          list-style: none;
+          display: flex;
+          gap: 1rem;
+        }
+        li {
+          color: white;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      `}</style>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
